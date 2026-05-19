@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaBookReader } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -6,8 +7,8 @@ const Navbar = () => {
     const menuItems = (
         <>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/item2">Item 2</Link></li>
-            <li><Link href="/item3">Item 3</Link></li>
+            <li><Link href="/all-Room">All Rooms</Link></li>
+            <li><Link href="/add-Room">Add Room</Link></li>
         </>
     )
     return (
@@ -23,7 +24,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl"> <FaBookReader /> Study Nook</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

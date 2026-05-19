@@ -7,14 +7,13 @@ export default function NotFound() {
     return (
         <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black px-6 text-white">
 
-            {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-black to-purple-950" />
 
-            {/* Glow Effects */}
+            
             <div className="absolute left-10 top-10 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl animate-pulse" />
             <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl animate-pulse" />
 
-            {/* Main Content */}
+            
             <motion.div
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -22,7 +21,7 @@ export default function NotFound() {
                 className="relative z-10 max-w-2xl text-center"
             >
 
-                {/* 404 Text */}
+         
                 <motion.h1
                     initial={{ scale: 0.5, rotate: -10 }}
                     animate={{ scale: 1, rotate: 0 }}
@@ -36,17 +35,17 @@ export default function NotFound() {
                     404
                 </motion.h1>
 
-                {/* Title */}
+               
                 <h2 className="mt-6 text-4xl font-bold tracking-tight">
                     Page Not Found
                 </h2>
 
-                {/* Description */}
+               
                 <p className="mx-auto mt-4 max-w-lg text-lg text-gray-400">
                     The page you are looking for doesn&apos;t exist or may have been moved.
                 </p>
 
-                {/* Buttons */}
+               
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
 
                     <Link
@@ -64,7 +63,7 @@ export default function NotFound() {
                     </button>
                 </div>
 
-                {/* Small Footer Text */}
+               
                 <p className="mt-12 text-sm text-gray-500">
                     Error Code: 404 | Route Not Found
                 </p>
