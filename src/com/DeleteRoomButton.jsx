@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Swal from "sweetalert2";
@@ -26,12 +24,9 @@ const DeleteRoomButton = ({ id }) => {
 
         try {
 
-            const res = await fetch(
-                `http://localhost:5000/room/${id}`,
-                {
-                    method: "DELETE",
-                }
-            );
+            const res = await fetch(`http://localhost:5000/room/${id}`, {
+                method: "DELETE",
+            });
 
             const data = await res.json();
 
@@ -62,19 +57,7 @@ const DeleteRoomButton = ({ id }) => {
     return (
         <button
             onClick={handleDelete}
-            className="
-                flex
-                items-center
-                gap-2
-                px-6
-                py-4
-                rounded-2xl
-                bg-red-500
-                hover:bg-red-600
-                text-white
-                font-semibold
-                transition-all
-            "
+            className="flex items-center gap-2 px-6 py-4 rounded-2xl bg-red-500 hover:bg-red-600 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-red-300"
         >
             <MdDelete className="text-xl" />
             Delete

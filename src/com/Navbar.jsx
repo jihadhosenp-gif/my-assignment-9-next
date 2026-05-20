@@ -1,3 +1,6 @@
+"use client";
+
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { FaBookReader } from "react-icons/fa";
 
@@ -9,8 +12,12 @@ const Navbar = () => {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/all-Room">All Rooms</Link></li>
             <li><Link href="/add-Room">Add Room</Link></li>
+            
         </>
     )
+    const { data: session, isPending } = authClient.useSession()
+    const user = session?.user;
+    console.log(user,isPending, "user");
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -31,9 +38,32 @@ const Navbar = () => {
                    {menuItems}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+            {isPending?(
+                    <span className="loading loading-dots loading-xl"></span>
+                ) : user ? (
+                    <div className="navbar-end text-blue-950">
+                            <span className="mr-4">{user.image ? <img 
+                            src={user.image}
+                             alt={user.name}
+                              className="w-8 h-8 object-cover rounded-full mr-2 border" /> : null}{user.name}!</span>
+                        <button className="btn btn-primary" onClick={async()=> await authClient.signOut() }>
+                            Logout
+                        </button>
+                    </div>
+                ) : (
+                    <div className="navbar-end text-blue-950 gap-2">
+                        <button className="btn btn-primary">
+                            <Link className="text-white" href="/Login">
+                                Login
+                            </Link>
+                        </button>
+                        <button className="btn btn-primary">
+                            <Link className="text-white" href="/Sign-up">
+                                Sign Up
+                            </Link>
+                        </button>
+                    </div>
+                )}
         </div>
     );
 };
