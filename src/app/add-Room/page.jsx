@@ -1,14 +1,30 @@
+"use client"
+
 import { Button, Checkbox, CheckboxGroup, FieldError, Input, Label, TextArea, TextField } from "@heroui/react";
-import { div } from "framer-motion/client";
+
 
 import React from 'react';
 
 const AddRoom = () => {
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+        console.log("Form Data:", data);
+
+        const res = await fetch("http://localhost:5000/room", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        console.log("Success:", result);
+       
+    }
     return (
-        <div className="w-full max-w-4xl mx-auto p-6 md:p-10 space-y-8 
-  bg-white/80 backdrop-blur-xl rounded-3xl 
-  border border-white/20 shadow-2xl 
-  min-h-[600px]">
+        <div className="w-full max-w-4xl mx-auto p-6 md:p-10 space-y-8 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl min-h-[600px]">
             <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
                     Create a New Study Room
@@ -17,7 +33,7 @@ const AddRoom = () => {
                     Fill out the form below to list your study room and start sharing it with others.
                 </p>
             </div>
-            <form >
+            <form  onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
 
