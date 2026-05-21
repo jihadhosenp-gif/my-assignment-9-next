@@ -7,6 +7,8 @@ import { HiUserGroup } from "react-icons/hi";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
 import { MdOutlineMeetingRoom } from "react-icons/md";
 
+import { headers } from "next/headers";
+
 import DeleteRoomButton from "@/com/DeleteRoomButton";
 import { EditData } from "@/com/EditData";
 import  { Booking } from "@/com/Booking";
@@ -14,12 +16,19 @@ import  { Booking } from "@/com/Booking";
 
 
 const getRoomDetails = async (id) => {
+    const token = await auth.api.getToken({
+        headers: await headers(),
+    });
+    console.log("JWT Token:", token);
 
     try {
 
         const res = await fetch(
             `http://localhost:5000/room/${id}`,
             {
+                headers: {
+                    authorization: "LoggedIn",
+                },
                 cache: "no-store",
             }
         );
