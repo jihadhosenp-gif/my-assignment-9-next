@@ -10,7 +10,7 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
 
-                {/* Brand */}
+               
                 <div>
                     <h2 className="text-2xl font-bold mb-3">
                         StudyNook
@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Quick Links */}
+                
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
 
@@ -40,7 +40,7 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* Contact */}
+             
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Contact</h3>
 
@@ -61,7 +61,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Newsletter */}
+          
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Newsletter</h3>
 

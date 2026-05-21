@@ -1,6 +1,7 @@
 import Navbar from "@/com/Navbar";
 import Banner from "@/com/Banner";
 import FavoriteRoom from "@/com/FavoriteRoom";
+import Jin from "@/com/Jin";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       
       <Banner />
       <FavoriteRoom />
+      <Jin />
     </div>
   );
 }
