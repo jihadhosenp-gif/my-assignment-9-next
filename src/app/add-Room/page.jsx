@@ -12,7 +12,7 @@ const AddRoom = () => {
         const data = Object.fromEntries(formData.entries());
         console.log("Form Data:", data);
 
-        const res = await fetch("http://localhost:5000/room", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/room`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

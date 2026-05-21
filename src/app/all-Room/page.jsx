@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HiUserGroup } from "react-icons/hi";
 
 const allRoom = async () => {
-    const res = await fetch("http://localhost:5000/room");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/room`);
     const rooms = await res.json();
 
     console.log("Rooms:", rooms);

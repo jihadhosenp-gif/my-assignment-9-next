@@ -11,7 +11,7 @@ export default function FavoriteRoom() {
     useEffect(() => {
         const fetchRooms = async () => {
             try {
-                const res = await fetch("http://localhost:5000/room");
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/room`);
                 const data = await res.json();
 
                 setRooms(Array.isArray(data) ? data.slice(0, 4) : []);

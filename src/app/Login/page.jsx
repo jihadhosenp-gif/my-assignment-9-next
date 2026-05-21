@@ -19,7 +19,6 @@ import { useRouter } from "next/navigation";
 
 import toast from "react-hot-toast";
 
-// ✅ auth client import
 import { authClient } from "@/lib/auth-client";
 
 const LoginPage = () => {

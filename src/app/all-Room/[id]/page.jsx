@@ -24,7 +24,7 @@ const getRoomDetails = async (id) => {
     try {
 
         const res = await fetch(
-            `http://localhost:5000/room/${id}`,
+            `${process.env.NEXT_PUBLIC_BASE_URL}/room/${id}`,
             {
                 headers: {
                     authorization: "LoggedIn",

@@ -25,7 +25,6 @@ const SignUp = () => {
 
   const router = useRouter();
 
-  // ✅ Email Signup
   const onSubmit = async (e) => {
 
     e.preventDefault();
@@ -198,7 +197,7 @@ const SignUp = () => {
 
         </div>
 
-        {/* Google Login */}
+     
         <div className="mt-4">
 
           <Button

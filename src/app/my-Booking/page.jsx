@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HiUserGroup } from "react-icons/hi";
 
 const myBooking = async () => {
-    const res = await fetch("http://localhost:5000/booking");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/booking`);
     const bookings = await res.json();
 
     console.log("My Bookings:", bookings);

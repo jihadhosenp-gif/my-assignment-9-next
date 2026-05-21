@@ -24,7 +24,7 @@ const DeleteRoomButton = ({ id }) => {
 
         try {
 
-            const res = await fetch(`http://localhost:5000/room/${id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/room/${id}`, {
                 method: "DELETE",
             });
 
