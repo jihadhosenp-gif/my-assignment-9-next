@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 
+
 import { HiUserGroup } from "react-icons/hi";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
 import { MdOutlineMeetingRoom } from "react-icons/md";
 
 import DeleteRoomButton from "@/com/DeleteRoomButton";
 import { EditData } from "@/com/EditData";
+import  { Booking } from "@/com/Booking";
 
 
 
@@ -42,7 +44,6 @@ const getRoomDetails = async (id) => {
 
 const RoomDetails = async ({ params }) => {
 
-    // ✅ NEXT 15 FIX
     const { id } = await params;
 
     const room = await getRoomDetails(id);
@@ -95,7 +96,7 @@ const RoomDetails = async ({ params }) => {
                    
                     <div className="p-8 lg:p-12 flex flex-col justify-center space-y-8">
 
-                        {/* TOP CONTENT */}
+                       
                         <div className="space-y-5">
 
                             <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold w-fit">
@@ -123,7 +124,7 @@ const RoomDetails = async ({ params }) => {
                        
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
-                            {/* PRICE */}
+                         
                             <div className="bg-gray-50 rounded-2xl p-5 border border-gray-200 hover:shadow-lg transition-all duration-300">
 
                                 <p className="text-sm text-gray-500 mb-2">
@@ -231,40 +232,18 @@ const RoomDetails = async ({ params }) => {
                         <div className="flex flex-wrap gap-4 pt-4">
 
                           
-                            {
-                                user ? (
+                          
 
-                                    <button className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-indigo-300">
+                                   <Booking room={room}/>
 
-                                        <MdOutlineMeetingRoom className="text-2xl" />
-
-                                        Book Now
-
-                                    </button>
-
-                                ) : (
-
-                                    <button className="px-8 py-4 rounded-2xl bg-black hover:bg-gray-900 text-white font-semibold text-lg transition-all duration-300">
-
-                                        Login to Book
-
-                                    </button>
-                                )
-                            }
+                              
 
                           
-                            {
-                                isOwner && (
-                                    <>
-                                       
                                         <EditData room={room} />
 
                                         
                                         <DeleteRoomButton id={id} />
-                                    </>
-                                )
-                            }
-
+                                    
                         </div>
 
                     </div>

@@ -68,7 +68,11 @@ const LoginPage = () => {
             toast.error("Something went wrong!");
         }
     };
-
+    const handleGoogleLogin = async () => {
+        await authClient.signIn.social({
+            provider: "google",
+        });
+    };
     return (
         <div className="flex min-h-screen items-center justify-center w-full px-4">
 
@@ -172,6 +176,7 @@ const LoginPage = () => {
                     </Link>
 
                 </div>
+               
 
             </Card>
 

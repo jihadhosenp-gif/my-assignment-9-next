@@ -101,7 +101,7 @@ export function EditData({ room }) {
 
                         <Modal.CloseTrigger />
 
-                        {/* HEADER */}
+                       
                         <Modal.Header>
 
                             <Modal.Icon className="bg-cyan-100 text-cyan-600">
@@ -120,7 +120,7 @@ export function EditData({ room }) {
 
                         </Modal.Header>
 
-                        {/* BODY */}
+                       
                         <Modal.Body className="p-6">
 
                             <Surface variant="default">
@@ -132,7 +132,7 @@ export function EditData({ room }) {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
-                                        {/* ROOM NAME */}
+                                       
                                         <div className="md:col-span-2">
 
                                             <TextField
@@ -156,7 +156,7 @@ export function EditData({ room }) {
 
                                         </div>
 
-                                        {/* FLOOR */}
+                                       
                                         <TextField
                                             name="floor"
                                             defaultValue={room.floor}
@@ -176,7 +176,7 @@ export function EditData({ room }) {
 
                                         </TextField>
 
-                                        {/* CAPACITY */}
+                                        
                                         <TextField
                                             name="capacity"
                                             defaultValue={room.capacity}
@@ -198,7 +198,6 @@ export function EditData({ room }) {
 
                                         </TextField>
 
-                                        {/* RATE */}
                                         <TextField
                                             name="hourlyRate"
                                             defaultValue={room.hourlyRate}
@@ -220,7 +219,7 @@ export function EditData({ room }) {
 
                                         </TextField>
 
-                                        {/* IMAGE */}
+                                       
                                         <div className="md:col-span-2">
 
                                             <TextField
@@ -245,7 +244,7 @@ export function EditData({ room }) {
 
                                         </div>
 
-                                        {/* AMENITIES */}
+                                       
                                         <div className="md:col-span-2">
 
                                             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 md:p-6">
@@ -295,7 +294,7 @@ export function EditData({ room }) {
 
                                         </div>
 
-                                        {/* DESCRIPTION */}
+                                      
                                         <div className="md:col-span-2">
 
                                             <TextField
@@ -321,7 +320,7 @@ export function EditData({ room }) {
 
                                     </div>
 
-                                    {/* SUBMIT */}
+                                   
                                     <Button
                                         type="submit"
                                         variant="solid"
@@ -336,7 +335,6 @@ export function EditData({ room }) {
 
                         </Modal.Body>
 
-                        {/* FOOTER */}
                         <Modal.Footer>
 
                             <Button slot="close" variant="secondary">
